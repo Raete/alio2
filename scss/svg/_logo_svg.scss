@@ -1,0 +1,11 @@
+.svg_animation *{
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  transform-origin: 50% 50%;
+}
+
+@import '_logo-1'; 
+@import '_logo-2'; 
+@import '_logo-3'; 
+@import '_logo-4'; 
+@import '_logo-5'; 

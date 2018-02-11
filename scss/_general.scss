@@ -1,0 +1,252 @@
+//
+//	GENERALS
+// ------------------------------------------------------
+
+html {
+  box-sizing: border-box;}
+
+*, *:before, *:after {
+  box-sizing: inherit;}
+
+html, 
+body {
+  color: $color-text;
+  font-family: $main-font;
+  background: $color-main;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.container {
+  max-width: $container-width;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 70px auto;
+  grid-template-areas: 
+    "t" 
+    "c"; 
+  
+  height: 100vh;
+  padding: 1em;
+  margin: 0 auto;
+
+  overflow: hidden;
+  position: relative;
+}
+
+//BUTTONS -- link
+.btn {
+  font-weight: 900;
+  &--link {
+    position: relative;
+    font-size: .9em;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      height: 3px;
+      width: 100%;
+      background: $color-text;
+    }
+  }
+}
+
+// TOP BAR
+.top_bar {
+  grid-area: t;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+//logo
+.logo_ico_wrapper {
+  position: relative;
+}
+
+.logo_ico {
+  display: none;
+}
+
+.logo--active {
+  display: block;
+}
+
+.logo--deactive {
+  display: none;
+}
+
+.logo_name {
+  position: relative;
+  margin: 0 0 0 10px;
+  align-self: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 900;
+  &:after {
+    content: '2';
+    font-size: .5em;
+    position: absolute;
+    top: 0;
+    animation: fadeIn 2s;
+  }
+}
+
+//CONTENT
+.content {
+  grid-area: c;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "m a";
+}
+
+@media screen and (max-width: 600px) {
+  
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: 
+      "a"
+      "s";
+  }
+
+}
+
+// NAV BAR
+.nav_wrapper {
+  grid-area: m;
+  align-self: center;
+  justify-self: start;
+}
+
+@media screen and (max-width: 600px) {
+  
+  .nav_wrapper {
+    display: none;
+  }
+
+}
+
+.nav {
+  counter-reset: li;
+  list-style: none;
+  *list-style: decimal-leading-zero;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-left: 40px;
+  &_item {
+    position: relative;
+    margin-bottom: 2.5em;
+    height: 3px;
+    width: 25px;
+    background: $color-light;
+    transition: .5s;
+    &:hover {
+      background: $color-text;
+    }
+  }
+}
+
+.nav_item:before {
+  content: "0"counter(li)".";
+  counter-increment: li;
+  position: absolute; 
+  left: -3em;
+  top: 50%;
+  margin-top: -1em;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  text-align: center;
+  color: $color-light;
+}
+
+.nav_item:nth-child(1) {
+  animation: nav 0.5s;
+}
+
+.nav_item:nth-child(2) {
+  animation: nav 1s;
+}
+
+.nav_item:nth-child(3) {
+  animation: nav 1.5s;
+}
+
+.nav_item:nth-child(4) {
+  animation: nav 2s;
+}
+
+.nav_item:nth-child(5) {
+  animation: nav 2.5s;
+}
+
+.nav_item--active,
+.nav_item:hover  {
+  background: $color-text;
+  width: 40px;
+  &:before {
+    color: $color-text;
+  }
+}
+
+.nav_item--deactive {
+  background: $color-light;
+  width: 25px;
+  &:before {
+    color: $color-light;
+  }
+}
+
+//page content
+.page {
+  position: relative;
+  grid-area: a;
+  align-self: center;
+}
+
+.page_content {
+  opacity:0;
+  transform: translate3d(50%, 0, 0); //animaniton (out of website)
+  transition: transform 1s, opacity 1s;
+}
+
+.page_title {
+  margin-top: 0;
+  font-size: 2.5em;
+}
+
+.page_article {
+  font-size: .9em;
+  line-height: 30px;
+  color: $color-text-light;
+}
+
+.page.active .page_content {
+  opacity: 1;
+  transform: translate3d(0, 0, 0); //animation (slide left new page)
+}
+
+.page.inactive .page_content {
+  opacity: 0;
+  transform: scale(0.95); // page disapear
+}
+
+@media screen and (max-width: 600px) {
+  
+  .page_content {
+    text-align: center;
+  }
+
+  .page_title {
+    font-size: 2em;
+  }
+  
+}

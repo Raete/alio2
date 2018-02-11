@@ -1,0 +1,81 @@
+//
+//	LOGO SVG ANIMATION logo-2
+// ------------------------------------------------------
+
+.logo-2-c {
+  fill: $color-text;
+  &1 { animation-name: logo_2_c_1; }
+  &2 { animation-name: logo_2_c_2; }
+  &3 { animation-name: logo_2_c_3; }
+  &4 { animation-name: logo_2_c_4; }
+  &5 { animation-name: logo_2_c_5; }
+  &6 { animation-name: logo_2_c_6; }
+  &7 { animation-name: logo_2_c_7; }
+  &8 { animation-name: logo_2_c_8; }
+  &9 { animation-name: logo_2_c_9; }
+}
+
+@keyframes logo_2_c_1 {
+  60% { opacity: 0 }
+  70% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_2 {
+  80% { opacity: 0 }
+  90% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_3 {
+  10% { opacity: 0 }
+  20% { opacity: 1 }
+  0% { opacity: 0 }
+  100% {opacity: 1 }
+}
+
+@keyframes logo_2_c_4 {
+  30% { opacity: 0 }
+  40% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_5 {
+  0% { opacity: 0 }
+  10% { opacity: 1 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_6 {
+  70% { opacity: 0 }
+  80% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_7 {
+  40% { opacity: 0 }
+  50% { opacity: 1 }
+  0% { opacity: 0 }
+  100% {  opacity: 1 }
+}
+
+@keyframes logo_2_c_8 {
+  50% { opacity: 0 }
+  60% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes logo_2_c_9 {
+  20% { opacity: 0 }
+  30% { opacity: 1 }
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+
+
