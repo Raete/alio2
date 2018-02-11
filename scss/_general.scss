@@ -148,9 +148,6 @@ a {
     width: 25px;
     background: $color-light;
     transition: .5s;
-    &:hover {
-      background: $color-text;
-    }
   }
 }
 
@@ -188,8 +185,7 @@ a {
   animation: nav 2.5s;
 }
 
-.nav_item--active,
-.nav_item:hover  {
+.nav_item--active {
   background: $color-text;
   width: 40px;
   &:before {
